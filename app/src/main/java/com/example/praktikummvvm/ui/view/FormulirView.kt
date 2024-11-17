@@ -32,6 +32,7 @@ fun FormulirView(
     pilihanJK : List<String>,
     onClickButton : (MutableList<String>) -> Unit
 ){
+    var nim by remember { mutableStateOf("") }
     var nama by remember { mutableStateOf("") }
     var email by remember { mutableStateOf("") }
     var noHp by remember { mutableStateOf("") }
@@ -44,6 +45,14 @@ fun FormulirView(
         Text(text = "Biodata", fontWeight = FontWeight.Bold,
             fontSize = 20.sp)
         Spacer(modifier = Modifier.padding(20.dp))
+
+        TextField(
+            value = nim,
+            onValueChange = {nim = it},
+            modifier = Modifier.fillMaxWidth().padding(5.dp),
+            label = { Text("NIM") },
+            placeholder = { Text("Masukkan NIM anda: ") }
+        )
 
         TextField(
             value = nama,
@@ -66,6 +75,14 @@ fun FormulirView(
         }
 
         TextField(
+            value = alamat,
+            onValueChange = {alamat = it},
+            modifier = Modifier.fillMaxWidth(),
+            label = { Text("Alamat") },
+            placeholder = { Text("Masukkan Alamat anda: ") }
+        )
+
+        TextField(
             value = email,
             onValueChange = {email = it},
             modifier = Modifier.fillMaxWidth().padding(5.dp),
@@ -81,13 +98,6 @@ fun FormulirView(
             placeholder = { Text("Masukkan Nomor HP anda: ") }
         )
 
-        TextField(
-            value = alamat,
-            onValueChange = {alamat = it},
-            modifier = Modifier.fillMaxWidth(),
-            label = { Text("Alamat") },
-            placeholder = { Text("Masukkan Alamat anda: ") }
-        )
         Button(onClick = {
             onClickButton(listData)
         },
