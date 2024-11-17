@@ -21,6 +21,10 @@ fun TampilMahasiswaView(
 {
     Column (modifier = Modifier.fillMaxSize()) {
         TampilData(
+            judul = "NIM",
+            isinya = mhs.nim
+        )
+        TampilData(
             judul = "Nama",
             isinya = mhs.nama
         )
@@ -31,6 +35,14 @@ fun TampilMahasiswaView(
         TampilData(
             judul = "Alamat",
             isinya = mhs.alamat
+        )
+        TampilData(
+            judul = "E-mail",
+            isinya = mhs.email
+        )
+        TampilData(
+            judul = "No.HP",
+            isinya = mhs.noHp
         )
         Button(
             onClick = {onClickButton()},
