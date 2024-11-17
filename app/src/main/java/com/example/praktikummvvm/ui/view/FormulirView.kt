@@ -91,7 +91,7 @@ fun FormulirView(
             leadingIcon = { Icon(imageVector = Icons.Default.Place,
                 contentDescription = "Addressicon") },
             onValueChange = {alamat = it},
-            modifier = Modifier.fillMaxWidth(),
+            modifier = Modifier.fillMaxWidth().padding(5.dp),
             label = { Text("Alamat") },
             placeholder = { Text("Masukkan Alamat anda: ") }
         )
