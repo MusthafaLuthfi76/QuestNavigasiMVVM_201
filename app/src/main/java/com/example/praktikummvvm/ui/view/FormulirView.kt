@@ -7,8 +7,16 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.AccountBox
+import androidx.compose.material.icons.filled.Email
+import androidx.compose.material.icons.filled.Face
+import androidx.compose.material.icons.filled.Phone
+import androidx.compose.material.icons.filled.Place
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
+import androidx.compose.material3.Icon
+import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.RadioButton
 import androidx.compose.material3.RadioButtonDefaults
 import androidx.compose.material3.Text
@@ -46,16 +54,20 @@ fun FormulirView(
             fontSize = 20.sp)
         Spacer(modifier = Modifier.padding(20.dp))
 
-        TextField(
+        OutlinedTextField(
             value = nim,
+            leadingIcon = { Icon(imageVector = Icons.Default.AccountBox,
+                contentDescription = "Faceicon") },
             onValueChange = {nim = it},
             modifier = Modifier.fillMaxWidth().padding(5.dp),
             label = { Text("NIM") },
             placeholder = { Text("Masukkan NIM anda: ") }
         )
 
-        TextField(
+        OutlinedTextField(
             value = nama,
+            leadingIcon = { Icon(imageVector = Icons.Default.Face,
+                contentDescription = "Faceicon") },
             onValueChange = {nama = it},
             modifier = Modifier.fillMaxWidth().padding(5.dp),
             label = { Text("Nama") },
@@ -74,24 +86,30 @@ fun FormulirView(
             }
         }
 
-        TextField(
+        OutlinedTextField(
             value = alamat,
+            leadingIcon = { Icon(imageVector = Icons.Default.Place,
+                contentDescription = "Addressicon") },
             onValueChange = {alamat = it},
             modifier = Modifier.fillMaxWidth(),
             label = { Text("Alamat") },
             placeholder = { Text("Masukkan Alamat anda: ") }
         )
 
-        TextField(
+        OutlinedTextField(
             value = email,
+            leadingIcon = { Icon(imageVector = Icons.Default.Email,
+                contentDescription = "Mailicon") },
             onValueChange = {email = it},
             modifier = Modifier.fillMaxWidth().padding(5.dp),
             label = { Text("email") },
             placeholder = { Text("Masukkan email anda: ") }
         )
 
-        TextField(
+        OutlinedTextField(
             value = noHp,
+            leadingIcon = { Icon(imageVector = Icons.Default.Phone,
+                contentDescription = "Phoneicon") },
             onValueChange = {noHp = it},
             modifier = Modifier.fillMaxWidth().padding(5.dp),
             label = { Text("Nomor HP") },
