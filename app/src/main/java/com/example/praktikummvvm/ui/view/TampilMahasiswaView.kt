@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -14,7 +15,8 @@ import com.example.praktikummvvm.model.Mahasiswa
 
 @Composable
 fun TampilMahasiswaView(
-    mhs: Mahasiswa
+    mhs: Mahasiswa,
+    onClickButton: () -> Unit
 )
 {
     Column (modifier = Modifier.fillMaxSize()) {
@@ -30,6 +32,11 @@ fun TampilMahasiswaView(
             judul = "Alamat",
             isinya = mhs.alamat
         )
+        Button(
+            onClick = {onClickButton()},
+            modifier = Modifier.padding(vertical = 10.dp)) {
+            Text("Back")
+        }
     }
 }
 @Composable
